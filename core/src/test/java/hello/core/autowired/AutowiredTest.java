@@ -14,7 +14,7 @@ public class AutowiredTest {
     void AutowiredOption(){
         ApplicationContext ac = new AnnotationConfigApplicationContext(TestBean.class);
     }
-ㅐ
+
     //option 설정하기
     //member와 같이 스프링 빈이 아닌 것을 주입하려고 할 때(주입할 것이 없을 때)
     //방법 3개
