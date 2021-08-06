@@ -6,10 +6,12 @@ import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor //final이 붙은 필수적인 애들을 포함한 생성자를 자동으로 만들어주는 역할
 public class OrderServiceImpl implements  OrderService{
 
     //private final MemberRepository memberRepository = new MemoryMemberRepository();
@@ -19,11 +21,11 @@ public class OrderServiceImpl implements  OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy; //-> 구현체에 의존하지 않고 interface에만 의존한다.
 
-    @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+//    @Autowired
+//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = discountPolicy;
+//    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
