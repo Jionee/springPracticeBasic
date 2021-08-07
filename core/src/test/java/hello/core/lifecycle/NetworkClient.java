@@ -39,8 +39,7 @@ public class NetworkClient{
     }
 
     @PreDestroy
-    public void close()
-    {
+    public void close() {
         System.out.println("NetworkClient.destroy");
         disconnect();
     }
